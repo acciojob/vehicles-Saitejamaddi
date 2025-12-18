@@ -1,8 +1,7 @@
 package com.driver;
 
 public class F1 extends Car {
-    private int currentSpeed;
-    private int direction;
+
 
     public F1(String name, boolean isManual) {
         //Use arbitrary values for parameters which are not mentioned
@@ -11,14 +10,10 @@ public class F1 extends Car {
 
     }
 
-    @Override
-    public void move(int speed, int direction) {
-        this.currentSpeed = speed;
-        this.direction = direction;
-    }
+
 
     public void accelerate(int rate){
-        int newSpeed = this.currentSpeed*rate; //set the value of new speed by using currentSpeed and rate
+        int newSpeed = getCurrentSpeed()*rate; //set the value of new speed by using currentSpeed and rate
         /**
          * speed 0: gear 1
          * speed 1-50: gear 1
@@ -39,23 +34,23 @@ public class F1 extends Car {
 
         if(newSpeed > 0 && newSpeed<=50) {
             super.setCurrentGear(1);
-            changeSpeed(newSpeed, this.direction);
+            changeSpeed(newSpeed, getCurrentDirection());
         }else if(newSpeed<=100){
             super.setCurrentGear(2);
-            changeSpeed(newSpeed, this.direction);
+            changeSpeed(newSpeed, getCurrentDirection());
         }else if(newSpeed<=150){
             super.setCurrentGear(3);
-            changeSpeed(newSpeed, this.direction);
+            changeSpeed(newSpeed, getCurrentDirection());
         }else if(newSpeed<=200){
             super.setCurrentGear(4);
-            changeSpeed(newSpeed, this.direction);
+            changeSpeed(newSpeed, getCurrentDirection());
         }else if(newSpeed<=250){
             super.setCurrentGear(5);
-            changeSpeed(newSpeed, this.direction);
+            changeSpeed(newSpeed, getCurrentDirection());
         }
         else{
             super.setCurrentGear(6);
-            changeSpeed(newSpeed, this.direction);
+            changeSpeed(newSpeed, getCurrentDirection());
         }
     }
 

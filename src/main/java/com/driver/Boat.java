@@ -5,6 +5,15 @@ public class Boat implements WaterVehicle{
     private String name;
     private int capacity;
 
+    public Boat(String name, int capacity) {
+        this.name = name;
+        this.capacity = capacity;
+    }
+
+    public Boat() {
+
+    }
+
     public void setName(String name) {
         this.name = name;
     }
