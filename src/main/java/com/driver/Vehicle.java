@@ -24,6 +24,11 @@ public class Vehicle {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
     public void steer(int direction) {
         currentDirection += direction;
     }
