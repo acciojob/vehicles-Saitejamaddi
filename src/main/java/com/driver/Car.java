@@ -49,7 +49,7 @@ public class Car extends Vehicle {
     }
 
     public void changeGear(int newGear) {
-        currentGear = newGear;
+        setCurrentSpeed(newGear);
         System.out.println("changeGear method called - The gear is changed to: " + currentGear);
     }
 
